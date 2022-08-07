@@ -1,0 +1,29 @@
+{
+  "credentials": [
+    {
+      "id": 1,
+      "username": "Aki",
+      "password": "LePoop"
+    }
+  ],
+  "entries": [
+    {
+      "id": 1,
+      "author": "Aki",
+      "text": "Bored, sleep, bored, sleep",
+      "date": "someDate"
+    },
+    {
+      "id": 2,
+      "author": "Aki",
+      "text": "New crocky, new frenemie",
+      "date": "someDate"
+    },
+    {
+      "autor": "Aki",
+      "text": "Woof",
+      "date": "2022-08-06T00:47:02.411Z",
+      "id": 3
+    }
+  ]
+}

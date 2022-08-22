@@ -1,46 +1,52 @@
 import {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Entry from './Entry';
+import Search from './Search';
 
-function Entries({user}){
+function Entries({logged, entries}){
 
-    const [entries, setEntries] = useState([]);
+    const [search, setSearch] = useState("");
 
-    useEffect(() => {
-        fetch(`http://localhost:4000/entries?username=${user}`)
-        .then(r => r.json())
-        .then(entries => setEntries(entries))
-      },[])
+    const navigate = useNavigate();
 
-      let entriesToRender = entries.map(entry => <Entry key={entry.id} entry={entry}/>)
+    useEffect(()=> {
+        if(!logged) navigate ('/login')
+    }, [])
 
-    // const date = new Date();
+    function handleClick(){
+        navigate ('/newEntry')
+    }
 
-    // useEffect(()=>bla,[]);
+    function handleSearch(searchWord){
+        setSearch(searchWord);
+    }
 
-    // function bla(){
-    //     fetch("http://localhost:4000/entries",{
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //     autor: user,
-    //     text: "Woof",
-    //     date: date 
-    //     })
-    //     })
-    //     .then(r => r.json())
-    //     .then(post => console.log(post))
-    //     .catch(error => console.log(error))
-    // }
+    if(logged){
 
-    return(
-        <div>
-            <h1>{user}'s Journey</h1>
-            {entriesToRender}
-            {/* <button onClick={bla}>Click</button> */}
-        </div>
-    );
+        const today = new Date().toDateString();
+        let todayEntry = entries.filter(entry => entry.date === today);
+
+        let startEntry = [...entries].filter(e => e.date[0] === "=");
+
+        // console.log(entry.date.toLowerCase().indexOf(search.toLowerCase()))
+
+        const entriesToRender = entries.filter(entry => entry.text.toLowerCase().includes(search.toLowerCase()) ||
+                                                        entry.date.toLowerCase().indexOf(search.toLowerCase()))
+                                        .sort((a,b) => b.date.slice(8,10) - a.date.slice(8,10))
+                                        .map(entry => entry.date[0] === "=" ? null : <Entry key={entry.id} entry={entry}/>)
+
+        if(startEntry.length > 0 && search === "") entriesToRender.push(<Entry key={startEntry[0].id} entry={startEntry[0]}></Entry>);
+        
+        return(
+            <div>
+                {<h1>{logged.user.name}'s Journey</h1>}
+                {<Search onSearch={handleSearch}></Search>}
+                {todayEntry.length > 0 ? <></> : <button onClick={handleClick}>Add</button>}
+                {entriesToRender}
+            </div>
+        );
+    }
 }
+    
 
 export default Entries;

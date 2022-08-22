@@ -1,41 +1,81 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 
-function LogIn({onLogIn}){
+function LogIn({onLogIn, logged, onLogOut}){
 
     const [credentials, setCredentials] = useState({username: "", password: ""});
+    const navigate = useNavigate();
 
-    // function fetchUsers(){
-    //     fetch("http://localhost:4000/credentials")
-    //     .then(r => r.json())
-    //     .then(users => console.log(users))
-    // }
+    useEffect(()=> {
+        if(logged){
+            onLogOut();
+            navigate('/login');
+        }
+    },[])
 
-    function validateCredentials(){
-        fetch(`http://localhost:4000/credentials?username=${credentials.username}`)
+    function handleNewUser(){
+        const name = window.prompt("Name:");
+        fetch("http://localhost:3000/register", {
+            method : "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "email": credentials.username,
+                "password": credentials.password,
+                "name": name
+            })
+        })
         .then(r => r.json())
-        .then(user => {
-            if(user.length === 0){
-                window.alert("No user found");
-                setCredentials({...credentials, password: ""});
+        .then (obj => {
+            // checkMessage(obj)
+            if(typeof obj !== 'object'){
+                window.alert(obj)
+                setCredentials({username: "", password: ""});
             }
             else{
-                if(credentials.password !== user[0].password){
-                    window.alert("Incorrect Password");
-                    setCredentials({...credentials, password: ""});
-                }
-                onLogIn(user);
+                fetch(`http://localhost:3000/entries`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({text: "Journey Started", date: "=>" + new Date().toDateString(), userId: obj.user.id})
+                })
+                .then(r => r.json())
+                .then(obj2 => {
+                    onLogIn(obj);
+                    navigate('/entries');
+                })
+                .catch(error => console.log(error))
             }
         })
     }
 
-    function handleNewUser(){
+    function handleLogIn(e){
+        fetch(`http://localhost:3000/login`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "email": credentials.username,
+                "password": credentials.password
+            })
+        })
+        .then(r => r.json())
+        .then(obj => checkMessage(obj))
 
     }
 
-    function handleFormSubmit(e){
-        e.preventDefault();
-    //    console.log(credentials);
-        validateCredentials();
+    function checkMessage(obj){
+        if(typeof obj !== 'object'){
+            window.alert(obj)
+            setCredentials({username: "", password: ""});
+        }
+        else{
+            onLogIn(obj);
+            navigate('/entries');
+        }
     }
 
     function handleFormChange(e){
@@ -46,14 +86,14 @@ function LogIn({onLogIn}){
 
     return(
         <div>
-            <form onSubmit={handleFormSubmit}>
-                <label>Username: </label>
+            <form>
+                <label>Email: </label>
                 <input type="text" placeholder="username" name="username" value={credentials.username} onChange={handleFormChange}/>
                 <label>Password: </label>
                 <input type="password" placeholder="password" name="password" value={credentials.password} onChange={handleFormChange}/>
-                <input type="submit" value="Login" />
-                <button onClick={handleNewUser}>New User</button>
             </form>
+            <button onClick={handleLogIn}>LogIn</button>
+            <button onClick={handleNewUser}>New User</button>
         </div>
     );
 }

@@ -1,29 +1,80 @@
 {
-  "credentials": [
+  "users": [
     {
-      "id": 1,
-      "username": "Aki",
-      "password": "LePoop"
+      "email": "aki@aki.com",
+      "password": "$2a$10$ewbpuAbBS21GZO.uRxAwOumaO9mKdXtQpgwT3St8XxRhwdiinHbgS",
+      "name": "Aki",
+      "id": 1
+    },
+    {
+      "email": "panda@panda.com",
+      "password": "$2a$10$JHqV/WH3Euz9im7g0lD9Jurt/mArcMJvac8eNqoL7AeYWrFOJUHZi",
+      "name": "Lore",
+      "id": 2
+    },
+    {
+      "email": "Crock@crock.com",
+      "password": "$2a$10$jTIhzY09XLULyOhA6iiAiuRqE5IJz5yQD96.oW3tPg4NiQZ6XLM4m",
+      "name": "Crocky",
+      "id": 3
     }
   ],
   "entries": [
     {
       "id": 1,
-      "author": "Aki",
       "text": "Bored, sleep, bored, sleep",
-      "date": "someDate"
+      "date": "Wed Aug 11 2022",
+      "userId": 1
     },
     {
-      "id": 2,
-      "author": "Aki",
+      "id": 4,
       "text": "New crocky, new frenemie",
-      "date": "someDate"
+      "date": "someDate",
+      "userId": 1
     },
     {
-      "autor": "Aki",
       "text": "Woof",
       "date": "2022-08-06T00:47:02.411Z",
-      "id": 3
+      "id": 3,
+      "userId": 1
+    },
+    {
+      "text": "Everyone on my land all the time... Bark, bark, bark",
+      "date": "Wed Aug 10 2022",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "text": "Will they remember to feed me?",
+      "date": "Fri Aug 12 2022",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "text": "Journey Started",
+      "date": "=>Fri Aug 12 2022",
+      "userId": 2,
+      "id": 7
+    },
+    
+    {
+      "text": "Distracted with the week ahead. Don't feel like doing school",
+      "date": "Fri Aug 12 2022",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "text": "Journey Started",
+      "date": "=>Fri Aug 12 2022",
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "text": "Journey Started",
+      "date": "=>Sun Aug 7 2022",
+      "userId": 1,
+      "id": 10
     }
+    
   ]
 }

@@ -11,7 +11,7 @@ function Quote(){
         .catch(error => console.log(error));
     }
 
-    useEffect(() => getQuote,[])
+    useEffect(() => getQuote(),[])
 
     if(quote)
         return(

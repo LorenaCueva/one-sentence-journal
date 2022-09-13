@@ -1,13 +1,13 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-function LogIn({onLogIn, logged, onLogOut}){
+function LogIn({onLogIn, user, onLogOut}){
 
     const [credentials, setCredentials] = useState({username: "", password: ""});
     const navigate = useNavigate();
 
     useEffect(()=> {
-        if(logged){
+        if(user){
             onLogOut();
             navigate('/login');
         }
@@ -28,18 +28,18 @@ function LogIn({onLogIn, logged, onLogOut}){
         })
         .then(r => r.json())
         .then (obj => {
-            // checkMessage(obj)
             if(typeof obj !== 'object'){
                 window.alert(obj)
                 setCredentials({username: "", password: ""});
             }
             else{
-                fetch(`http://localhost:3000/entries`, {
+                fetch(`http://localhost:3000/600/entries`, {
                 method: "POST",
                 headers: {
-                    "Content-type": "application/json"
+                    "Content-type": "application/json",
+                    "Authorization": `Bearer ${obj.accessToken}`
                 },
-                body: JSON.stringify({text: "Journey Started", date: "=>" + new Date().toDateString(), userId: obj.user.id})
+                body: JSON.stringify({text: "-Journey Started-", date: new Date(), userId: obj.user.id})
                 })
                 .then(r => r.json())
                 .then(obj2 => {
@@ -63,19 +63,17 @@ function LogIn({onLogIn, logged, onLogOut}){
             })
         })
         .then(r => r.json())
-        .then(obj => checkMessage(obj))
+        .then(obj => {
+            if(typeof obj !== 'object'){
+                window.alert(obj)
+                setCredentials({username: "", password: ""});
+            }
+            else{
+                onLogIn(obj);
+                navigate('/entries');
+            }
+        })
 
-    }
-
-    function checkMessage(obj){
-        if(typeof obj !== 'object'){
-            window.alert(obj)
-            setCredentials({username: "", password: ""});
-        }
-        else{
-            onLogIn(obj);
-            navigate('/entries');
-        }
     }
 
     function handleFormChange(e){

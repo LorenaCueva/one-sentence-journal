@@ -9,9 +9,8 @@ function Search({onSearch}){
 
     return(
         <form onSubmit={(e)=> e.preventDefault()}>
-            <label>Search</label>
+            <label>Search content: </label>
             <input type="text" onChange={handleSearch}/>  
-            <p>(Search Month in 3 letter format)</p>
         </form>
     );
 }

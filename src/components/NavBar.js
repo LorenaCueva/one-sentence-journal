@@ -2,9 +2,6 @@ import {NavLink, Outlet, useLocation} from 'react-router-dom';
 
 function NavBar({logged}){
 
-    // let path = useLocation();
-    // if (path === )
-
     if(!logged)
         return(
             <>

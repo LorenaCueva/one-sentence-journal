@@ -13,6 +13,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [entries, setEntries] = useState([]);
 
+  console.log(entries)
+
   function onLogIn(user){
     setUser(user);
   }
@@ -23,6 +25,11 @@ function App() {
 
   function onNewEntry(newEntry){
     setEntries([...entries, newEntry])
+  }
+
+  function handleEditEntry(editedEntry){
+    const newEntries = entries.map(entry => entry.id === editedEntry.id ? editedEntry : entry);
+    setEntries(newEntries);
   }
 
   useEffect(()=> {
@@ -48,9 +55,9 @@ function App() {
         <Routes>
           <Route path='/' element={<NavBar logged={user}/>}>
             <Route index element={<Home/>}></Route>
-            <Route path='entries' element={<Entries logged={user} entries={entries}/>}></Route> 
-            <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} logged={user}/>}></Route>
-            <Route path='newEntry' element={<NewEntry logged={user} onNewEntry={onNewEntry}/>}></Route>
+            <Route path='entries' element={<Entries user={user} entries={entries} onEditEntry={handleEditEntry}/>}></Route> 
+            <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} user={user}/>}></Route>
+            <Route path='newEntry' element={<NewEntry user={user} onNewEntry={onNewEntry}/>}></Route>
             <Route path='motivation' element={<Quote/>}></Route>
           </Route>
         </Routes>

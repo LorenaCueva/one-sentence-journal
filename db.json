@@ -13,8 +13,8 @@
       "id": 2
     },
     {
-      "email": "Crock@crock.com",
-      "password": "$2a$10$jTIhzY09XLULyOhA6iiAiuRqE5IJz5yQD96.oW3tPg4NiQZ6XLM4m",
+      "email": "crock@crock.com",
+      "password": "$2a$10$ZAu8cAjgHVZrlbcShuqe1uNmLR0.ZLLVo.3K5VtZXqn418An9X8Xa",
       "name": "Crocky",
       "id": 3
     }
@@ -23,13 +23,13 @@
     {
       "id": 1,
       "text": "Bored, sleep, bored, sleep",
-      "date": "Wed Aug 11 2022",
+      "date": "2022-08-11T00:47:02.411Z",
       "userId": 1
     },
     {
       "id": 4,
       "text": "New crocky, new frenemie",
-      "date": "someDate",
+      "date": "2022-08-07T00:47:02.411Z",
       "userId": 1
     },
     {
@@ -40,23 +40,22 @@
     },
     {
       "text": "Everyone on my land all the time... Bark, bark, bark",
-      "date": "Wed Aug 10 2022",
+      "date": "2022-08-10T00:47:02.411Z",
       "userId": 1,
       "id": 5
     },
     {
       "text": "Will they remember to feed me?",
-      "date": "Fri Aug 12 2022",
+      "date": 1660201200000,
       "userId": 1,
       "id": 6
     },
     {
       "text": "Journey Started",
-      "date": "=>Fri Aug 12 2022",
+      "date": "=>2022-08-12T00:52:02.411Z",
       "userId": 2,
       "id": 7
     },
-    
     {
       "text": "Distracted with the week ahead. Don't feel like doing school",
       "date": "Fri Aug 12 2022",
@@ -65,16 +64,39 @@
     },
     {
       "text": "Journey Started",
-      "date": "=>Fri Aug 12 2022",
-      "userId": 3,
-      "id": 9
+      "date": "=>Sun Aug 3 2022",
+      "userId": 1,
+      "id": 10
     },
     {
       "text": "Journey Started",
-      "date": "=>Sun Aug 7 2022",
+      "date": "2022-08-22T17:01:35.411Z",
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "id": 13,
+      "text": "Bored, sleep, bored, sleep",
+      "date": "2022-09-12T07:00:00.000Z",
+      "userId": 1
+    },
+    {
+      "text": "Not today cheesy-puffs",
+      "date": "2022-09-13T07:00:00.000Z",
       "userId": 1,
-      "id": 10
+      "id": 15
+    },
+    {
+      "text": "The beast is back...",
+      "date": "2022-09-13T23:42:25.559Z",
+      "userId": 3,
+      "id": 16
+    },
+    {
+      "text": "bla bla",
+      "date": "2022-09-13T23:47:08.168Z",
+      "userId": 2,
+      "id": 17
     }
-    
   ]
 }

@@ -7,9 +7,12 @@ function Entry({entry, onEditEntry}){
 
 
     function handleEdit(e){
-
         e.preventDefault();
-        fetch(`http://localhost:3000/entries/${formData.id}`,{
+        if(formData.text == ""){
+            window.alert("Your entry can't be empty");
+        }
+        else{
+            fetch(`http://localhost:3000/entries/${formData.id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -18,6 +21,7 @@ function Entry({entry, onEditEntry}){
         })
         .then(r => r.json())
         .then(obj => {setEdit(false); onEditEntry(obj)})
+        }
     }
 
     function handleFormChange(e){

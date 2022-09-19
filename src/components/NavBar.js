@@ -1,8 +1,8 @@
-import {NavLink, Outlet, useLocation} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 
-function NavBar({logged}){
+function NavBar({user}){
 
-    if(!logged)
+    if(!user)
         return(
             <>
             <nav>
@@ -19,7 +19,6 @@ function NavBar({logged}){
             <nav>
                 <NavLink to="/">Home    |</NavLink>
                 <NavLink to="entries">Entries    |</NavLink>
-                {/* <NavLink to="newEntry">New Entry    |</NavLink> */}
                 <NavLink to="login">Log Out    |</NavLink>
                 <NavLink to="motivation">Motivation    |</NavLink>
             </nav>

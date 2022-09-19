@@ -23,18 +23,16 @@ function Entries({user, entries, onEditEntry}){
 
     if(user){
 
-        const today = new Date().toDateString();
         const readEntries = entries.map(entry => {entry.date = new Date(entry.date)
                                                 return entry});
-
-        let todayEntry = readEntries.map(entry => entry.date.toDateString())
-                                    .filter(entry => entry === today)
-
-        console.log(todayEntry)
 
         const entriesToRender = readEntries.filter(entry => entry.text.toLowerCase().includes(search.toLowerCase()))
                                         .sort((a,b) => b.date - a.date)
                                         .map(entry => <Entry key={entry.id} entry={entry} onEditEntry={onEditEntry}/>)
+
+        const today = new Date().toDateString();
+        const todayEntry = readEntries.map(entry => entry.date.toDateString())
+                                      .filter(entry => entry === today);
         
         return(
             <div>

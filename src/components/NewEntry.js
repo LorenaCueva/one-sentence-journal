@@ -5,7 +5,7 @@ function NewEntry({user, onNewEntry}){
 
     const today = new Date();
 
-    const [newEntryData, setNewEntryData] = useState({text:"", date: today, userId:""});
+    const [newEntryData, setNewEntryData] = useState({text:"", date: today, userId: user.user.id});
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -15,8 +15,11 @@ function NewEntry({user, onNewEntry}){
 
     function handleSubmit(e){
         e.preventDefault();
-        // console.log(newEntryData);
-        fetch(`http://localhost:3000/600/entries`, {
+        if(newEntryData.text == ""){
+            window.alert("Your entry can't be empty");
+        }
+        else{
+            fetch(`http://localhost:3000/600/entries`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -28,6 +31,10 @@ function NewEntry({user, onNewEntry}){
         .then(obj => {
             onNewEntry(obj);
             navigate('/entries')})
+
+        }
+        // console.log(newEntryData);
+        
         
     }
 
@@ -44,7 +51,12 @@ function NewEntry({user, onNewEntry}){
           <form onSubmit={handleSubmit}>
           {/* <label>{today}</label> */}
           <textarea name="text" value={newEntryData.text} onChange={handleFormChange}/>
+          <button onClick={(e)=>{
+             e.preventDefault();
+            navigate('/entries')}
+            }>Cancel</button>
           <button type="submit">Done</button>
+          
           </form>
         </div>
     );

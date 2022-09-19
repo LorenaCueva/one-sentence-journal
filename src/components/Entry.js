@@ -8,7 +8,7 @@ function Entry({entry, onEditEntry}){
 
     function handleEdit(e){
         e.preventDefault();
-        if(formData.text == ""){
+        if(formData.text === ""){
             window.alert("Your entry can't be empty");
         }
         else{

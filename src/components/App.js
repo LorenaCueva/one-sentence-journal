@@ -7,6 +7,8 @@ import Entries from './Entries';
 import NewEntry from './NewEntry';
 import Quote from './Quote';
 import LogIn from './LogIn';
+import Logo from './Logo';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
   }
 
   useEffect(()=> {
+    M.AutoInit();
     if(user){
         fetch(`http://localhost:3000/600/entries?userId=${user.user.id}`,{
         method: "GET",
@@ -47,19 +50,21 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>Title ???</h1>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<NavBar user={user}/>}>
-            <Route index element={<Home/>}></Route>
-            <Route path='entries' element={<Entries user={user} entries={entries} onEditEntry={handleEditEntry}/>}></Route> 
-            <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} user={user}/>}></Route>
-            <Route path='newEntry' element={<NewEntry user={user} onNewEntry={onNewEntry}/>}></Route>
-            <Route path='motivation' element={<Quote/>}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className='container'>
+      <div className="App">
+        <Logo/>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<NavBar user={user}/>}>
+              <Route index element={<Home/>}></Route>
+              <Route path='entries' element={<Entries user={user} entries={entries} onEditEntry={handleEditEntry}/>}></Route> 
+              <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} user={user}/>}></Route>
+              <Route path='newEntry' element={<NewEntry user={user} onNewEntry={onNewEntry}/>}></Route>
+              <Route path='motivation' element={<Quote/>}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

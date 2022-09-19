@@ -1,15 +1,25 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { setActiveLink } from './NavBar';
 
 function LogIn({onLogIn, user, onLogOut}){
 
     const [credentials, setCredentials] = useState({username: "", password: ""});
     const navigate = useNavigate();
 
+    function setNavbar(){
+        setActiveLink("login", true);
+        setActiveLink("home", false);
+        setActiveLink("motivation", false);
+    }
+
     useEffect(()=> {
         if(user){
             onLogOut();
             navigate('/login');
+        }
+        else{
+            setNavbar();
         }
     },[])
 

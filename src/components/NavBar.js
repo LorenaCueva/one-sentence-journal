@@ -1,17 +1,24 @@
 import {NavLink, Outlet} from 'react-router-dom';
 
+export function setActiveLink(linkName, isActive){
+    const l = document.getElementById(linkName);
+    isActive ? l.className = "active" : l.className = "";
+}
+
 function NavBar({user}){
 
     if(!user)
         return(
-            <>
+        <div className="nav-wrapper">
             <nav>
-                <NavLink to="/">Home    |</NavLink>
-                <NavLink to="login">Log In     |</NavLink>
-                <NavLink to="motivation">Motivation    |</NavLink>
+                <ul className="left hide-on-med-and-down">
+                    <li id="home"><NavLink to="/">Home</NavLink></li>
+                    <li id="login"><NavLink to="login">Log In</NavLink></li>
+                    <li id="motivation"><NavLink to="motivation">Motivation</NavLink></li>
+                </ul>
             </nav>
             <Outlet/>
-        </>
+        </div>
         );
 
     return(

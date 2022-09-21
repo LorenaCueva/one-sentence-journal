@@ -93,16 +93,56 @@ function LogIn({onLogIn, user, onLogOut}){
     }
 
     return(
-        <div>
-            <form>
-                <label>Email: </label>
-                <input type="text" placeholder="username" name="username" value={credentials.username} onChange={handleFormChange}/>
-                <label>Password: </label>
-                <input type="password" placeholder="password" name="password" value={credentials.password} onChange={handleFormChange}/>
-            </form>
-            <button onClick={handleLogIn}>LogIn</button>
-            <button onClick={handleNewUser}>New User</button>
+        // <div>
+        //     <form>
+        //         <label>Email: </label>
+        //         <input type="text" placeholder="username" name="username" value={credentials.username} onChange={handleFormChange}/>
+        //         <label>Password: </label>
+        //         <input type="password" placeholder="password" name="password" value={credentials.password} onChange={handleFormChange}/>
+        //     </form>
+        //     <button onClick={handleLogIn}>LogIn</button>
+        //     <button onClick={handleNewUser}>New User</button>
+        // </div>
+
+    //     <div classNameName="row">
+    //     <form classNameName="col s6">
+    //       <div classNameName="row">
+    //         <div classNameName="input-field col s12">
+    //           {/* <label htmlFor='email'>Email</label> */}
+    //           <input placeholder="email" type="email" name = "username" classNameName="validate" value={credentials.username} onChange={handleFormChange}/>
+    //           {/* <label htmlFor='password'>Password</label> */}
+    //           <input id="password" type="password" name = "password" classNameName="validate" value={credentials.password} onChange={handleFormChange}/>
+    //           {/* <label>Email</label> */}
+    //           {/* <span className="helper-text" data-error="wrong" data-success="right">Helper text</span> */}
+    //         </div>
+    //       </div>
+    //     </form>
+    //   </div>
+
+    <div className="row">
+        <form className="col s6 offset-s3">
+            <div className="row">
+                <div className="input-field col s6">
+                    <label htmlFor="email">Email</label>
+                    <input id="email" type="email" name="username" className="validate" value={credentials.username} onChange={handleFormChange}/>
+                </div>
+                <div className="input-field col s6">
+                    <label htmlFor="password">Password</label>
+                    <input id="password" type="password" name="password" className="validate" value={credentials.password} onChange={handleFormChange}/>
+                </div>
+            </div>
+        </form>
+        <div className="row">
+            <div className="col s6 offset-s3">
+                <button className="btn waves-effect waves-light red lighten-2" onClick={handleLogIn}>LogIn</button>
+            </div>
         </div>
+        <div className="row">
+            <div className="col s6 offset-s3">
+                <button className="btn waves-effect waves-light red lighten-2" onClick={handleNewUser}>New User</button>
+            </div>
+        </div>
+  </div>
     );
 }
 

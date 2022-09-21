@@ -56,11 +56,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<NavBar user={user}/>}>
-              <Route index element={<Home/>}></Route>
+              <Route index element={<Home user={user}/>}></Route>
               <Route path='entries' element={<Entries user={user} entries={entries} onEditEntry={handleEditEntry}/>}></Route> 
               <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} user={user}/>}></Route>
               <Route path='newEntry' element={<NewEntry user={user} onNewEntry={onNewEntry}/>}></Route>
-              <Route path='motivation' element={<Quote/>}></Route>
+              <Route path='motivation' element={<Quote user={user}/>}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

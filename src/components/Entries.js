@@ -23,9 +23,8 @@ function Entries({user, entries, onEditEntry}){
         setActiveLink("entries", true)
     }
     
-
     function handleClick(){
-        navigate ('/newEntry')
+        navigate ('/newEntry');
     }
 
     function handleSearch(searchWord){
@@ -39,7 +38,7 @@ function Entries({user, entries, onEditEntry}){
 
         const entriesToRender = readEntries.filter(entry => entry.text.toLowerCase().includes(search.toLowerCase()))
                                         .sort((a,b) => b.date - a.date)
-                                        .map(entry => <Entry key={entry.id} entry={entry} onEditEntry={onEditEntry}/>)
+                                        .map(entry => <Entry key={entry.id} entry={entry} onEditEntry={onEditEntry} user={user}/>)
 
         const today = new Date().toDateString();
         const todayEntry = readEntries.map(entry => entry.date.toDateString())

@@ -27,16 +27,15 @@ function Quote({user}){
 
     if(quote)
         return(
-            <div>
-                <h1>Get Motivated</h1>
-                <p>{quote.quote}</p>
-                <sub>-{quote.person}</sub>
-                <p><button className="btn waves-effect waves-light red lighten-2" onClick={getQuote}>I need more motivation</button></p>
+            <div className="card-panel grey lighten-4">
+                <h6>{quote.quote}</h6>
+                <p>-{quote.person}</p>
+                <button className="btn waves-effect waves-light red lighten-2" onClick={getQuote}>I need more motivation</button>
             </div>
         );
     
     return(
-        <div>
+        <div className="card-panel grey lighten-4">
             <h1>Quote</h1>
             <h2>Thinking...</h2>
         </div>

@@ -22,7 +22,7 @@
   "entries": [
     {
       "id": 1,
-      "text": "Bored, sleep, bored, sleep",
+      "text": "Bored, sleep, bored, sleep.",
       "date": "2022-08-11T00:47:02.411Z",
       "userId": 1
     },
@@ -51,8 +51,8 @@
       "id": 6
     },
     {
-      "text": "Journey Started",
-      "date": "=>2022-08-12T00:52:02.411Z",
+      "text": "Journey Started.",
+      "date": "2022-06-11T00:47:02.411Z",
       "userId": 2,
       "id": 7
     },
@@ -93,7 +93,7 @@
       "id": 16
     },
     {
-      "text": "bla bla",
+      "text": "bla bla bla",
       "date": "2022-09-13T23:47:08.168Z",
       "userId": 2,
       "id": 17
@@ -111,10 +111,16 @@
       "id": 19
     },
     {
-      "text": "What is this dog food that you are giving me?",
+      "text": "Server, I'll have the duck.",
       "date": "2022-09-21T20:37:08.697Z",
       "userId": 1,
       "id": 20
+    },
+    {
+      "text": "Did a little bit of school.",
+      "date": "2022-09-21T22:01:38.473Z",
+      "userId": 2,
+      "id": 21
     }
   ]
 }

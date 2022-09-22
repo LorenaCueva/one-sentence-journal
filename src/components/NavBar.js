@@ -9,9 +9,10 @@ function NavBar({user}){
 
     if(!user)
         return(
-        <div>
+        <div> 
             <div className="nav-wrapper">
                 <nav>
+                
                     <ul className="left hide-on-med-and-down">
                         <li id="home"><NavLink to="/">Home</NavLink></li>
                         <li id="login"><NavLink to="login">Log In</NavLink></li>

@@ -34,10 +34,7 @@ function NewEntry({user, onNewEntry}){
             onNewEntry(obj);
             navigate('/entries')})
 
-        }
-        // console.log(newEntryData);
-        
-        
+        }        
     }
 
     function handleFormChange(e){
@@ -48,40 +45,25 @@ function NewEntry({user, onNewEntry}){
 
     if (user){
         return (
-            // <div>
-            // <h1>{today.toDateString()}</h1>
-            // <form onSubmit={handleSubmit}>
-            // {/* <label>{today}</label> */}
-            // <textarea name="text" value={newEntryData.text} onChange={handleFormChange}/>
-            // <button onClick={(e)=>{
-            //     e.preventDefault();
-            //     navigate('/entries')}
-            //     }>Cancel</button>
-            // <button type="submit">Done</button>
-            
-            // </form>
-            // </div>
-
-<div className="row">
-<div className="col s6 offset-s3">
-  <div className="card grey lighten-4">
-    <div className="card-content">
-      <span className="card-title">-Today, {today.toDateString()}-</span>
-      <form onSubmit={handleSubmit}>
-            {/* <label htmlFor="editText">Edit Entry</label> */}
-            <textarea id ="text" className="materialize-textarea" name="text" value={newEntryData.text} onChange={handleFormChange} placeholder="What marked my day?"/>
-            <button className="waves-effect waves-light btn red lighten-2" 
-                onClick={(e)=>{
-                    e.preventDefault();
-                    navigate('/entries')}
-                }>Cancel</button>
-            <input className="waves-effect waves-light btn red lighten-2" type="submit" value="Done"/>
-
-      </form>
-    </div>
-  </div>
-</div>
-</div>
+                <div className="row">
+                    <div className="col s6 offset-s3">
+                        <div className="card grey lighten-4">
+                            <div className="card-content">
+                                <span className="card-title">-Today, {today.toDateString()}-</span>
+                                <form onSubmit={handleSubmit}>
+                                    <textarea id ="text" className="materialize-textarea" name="text" value={newEntryData.text} onChange={handleFormChange} placeholder="What marked my day?"/>
+                                    <button className="waves-effect waves-light btn red lighten-2" 
+                                        onClick={(e)=>{
+                                            e.preventDefault();
+                                            navigate('/entries')}
+                                            }>Cancel</button>
+                                    <button className="waves-effect waves-light btn red lighten-2" >Done</button>
+    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         );
     }
 }

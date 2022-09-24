@@ -2,7 +2,7 @@
 
 ## Overview
 
-Application to keep a One sentence Journal.
+Application to keep a One Sentence Journal.
 
 ## Features
 
@@ -47,3 +47,5 @@ https://motivational-quote-api.herokuapp.com/
 https://www.canva.com/
 
 ## BLOG POST
+
+https://medium.com/@lorenacueva/date-ing-can-be-complicated-40676c1aa8a4

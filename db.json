@@ -17,6 +17,12 @@
       "password": "$2a$10$ZAu8cAjgHVZrlbcShuqe1uNmLR0.ZLLVo.3K5VtZXqn418An9X8Xa",
       "name": "Crocky",
       "id": 3
+    },
+    {
+      "email": "lore@lore.com",
+      "password": "$2a$10$1wn0tk3ewIeW4jLhhc90m.92PC/IBKHkXtQl/XVceNi0mZZ/pCJN.",
+      "name": "Lore",
+      "id": 4
     }
   ],
   "entries": [
@@ -34,7 +40,7 @@
     },
     {
       "text": "Woof",
-      "date": "2022-08-06T00:47:02.411Z",
+      "date": "2022-08-03T17:02:35.411Z",
       "id": 3,
       "userId": 1
     },
@@ -58,13 +64,13 @@
     },
     {
       "text": "Distracted with the week ahead. Don't feel like doing school",
-      "date": "Fri Aug 12 2022",
+      "date": "2022-08-12T17:01:35.411Z",
       "userId": 2,
       "id": 8
     },
     {
       "text": "Journey Started",
-      "date": "Sun Aug 3 2022",
+      "date": "2022-08-03T17:01:35.411Z",
       "userId": 1,
       "id": 10
     },
@@ -121,6 +127,24 @@
       "date": "2022-09-21T22:01:38.473Z",
       "userId": 2,
       "id": 21
+    },
+    {
+      "text": "They forgot I was outside...",
+      "date": "2022-09-22T21:40:53.743Z",
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "text": "-Journey Started-",
+      "date": "2022-09-23T21:59:10.381Z",
+      "userId": 4,
+      "id": 23
+    },
+    {
+      "text": "Ate a bone in the way my ancestors did.",
+      "date": "2022-09-24T21:55:09.355Z",
+      "userId": 1,
+      "id": 24
     }
   ]
 }

@@ -32,6 +32,8 @@ function Entry({entry, onEditEntry, user}){
     }
 
     const d = new Date(formData.date).toDateString();
+
+    
     const today = new Date().toDateString();
 
     if(!edit){
@@ -61,7 +63,7 @@ function Entry({entry, onEditEntry, user}){
                   <form onSubmit={handleEdit}>
                         <label htmlFor="editText">Edit Entry</label>
                         <textarea id ="editText" className="materialize-textarea" name="text" value={formData.text} onChange={handleFormChange}/>
-                        <button className="waves-effect waves-light btn red lighten-2" onClick={(e) =>{e.preventDefault(); setEdit(false)}}>Cancel</button> 
+                        <button className="waves-effect waves-light btn red lighten-2" onClick={(e) =>{ e.preventDefault(); setEdit(false)}}>Cancel</button> 
                         <button className="waves-effect waves-light btn red lighten-2" type="submit">Done</button>
                   </form>
                 </div>

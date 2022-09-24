@@ -55,7 +55,7 @@ function App() {
         <Logo/>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<NavBar user={user}/>}>
+              <Route path='/' element={<NavBar user={user}/>}>
               <Route index element={<Home user={user}/>}></Route>
               <Route path='entries' element={<Entries user={user} entries={entries} onEditEntry={handleEditEntry}/>}></Route> 
               <Route path='login' element={<LogIn onLogIn={onLogIn} onLogOut={onLogOut} user={user}/>}></Route>

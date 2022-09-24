@@ -57,7 +57,7 @@ function NewEntry({user, onNewEntry}){
                                             e.preventDefault();
                                             navigate('/entries')}
                                             }>Cancel</button>
-                                    <button className="waves-effect waves-light btn red lighten-2" >Done</button>
+                                    <button className="waves-effect waves-light btn red lighten-2" type='submit'>Done</button>
     
                                 </form>
                             </div>

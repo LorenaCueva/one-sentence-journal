@@ -4,7 +4,7 @@ import {useEffect} from 'react';
 function Home({user}){
 
     function setNavbar(){
-        if(user) setActiveLink("entries", true);
+        if(user) setActiveLink("entries", false);
         else setActiveLink("login", false);
 
         setActiveLink("home", true);

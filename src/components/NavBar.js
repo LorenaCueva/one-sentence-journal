@@ -31,8 +31,9 @@ function NavBar({user}){
                     <li id="entries"><NavLink to="entries">Entries</NavLink></li>
                     <li id="logout"><NavLink to="login">Log Out</NavLink></li>
                     <li id="motivation"><NavLink to="motivation">Motivation</NavLink></li>
-                    
                 </ul>
+                <h5 className='right align'>-------- {user.user.name}        -------</h5>
+                
             </nav>
             <Outlet/>
         </div>

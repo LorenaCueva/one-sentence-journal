@@ -49,3 +49,8 @@ https://www.canva.com/
 ## BLOG POST
 
 https://medium.com/@lorenacueva/date-ing-can-be-complicated-40676c1aa8a4
+
+
+## Video
+
+https://www.youtube.com/watch?v=d7Q6MZQ6YJ0

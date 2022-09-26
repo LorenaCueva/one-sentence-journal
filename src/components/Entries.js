@@ -7,6 +7,7 @@ import { setActiveLink } from './NavBar';
 function Entries({user, entries, onEditEntry}){
 
     const [search, setSearch] = useState("");
+    
     const navigate = useNavigate();
 
     useEffect(()=> {
@@ -25,6 +26,7 @@ function Entries({user, entries, onEditEntry}){
     
     function handleClick(){
         navigate ('/newEntry');
+
     }
 
     function handleSearch(searchWord){

@@ -14,11 +14,11 @@ Application to keep a One Sentence Journal.
 
 - Install both JSON Server and JSON Server Auth :
 
-### NPM
-npm install -D json-server json-server-auth
+    ### NPM
+    npm install -D json-server json-server-auth
 
-### Yarn
-yarn add -D json-server json-server-auth
+    ### Yarn
+    yarn add -D json-server json-server-auth
 
 
 ## Installation Instructions
@@ -29,9 +29,9 @@ yarn add -D json-server json-server-auth
 
 - Start JSON server (with JSON server Auth as middleware) :
 
-json-server db.json -m ./node_modules/json-server-auth
+    json-server db.json -m ./node_modules/json-server-auth
 
-NOTE: make sure your server is running on port 3000
+    NOTE: make sure your server is running on port 3000
 
 - NPM or Yarn start
 

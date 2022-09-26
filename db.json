@@ -23,6 +23,12 @@
       "password": "$2a$10$1wn0tk3ewIeW4jLhhc90m.92PC/IBKHkXtQl/XVceNi0mZZ/pCJN.",
       "name": "Lore",
       "id": 4
+    },
+    {
+      "email": "lorenacueva@hotmail.com",
+      "password": "$2a$10$gEwMReeKAz8zICxDx9wu0.RS.5W0CkfL9drL2mD2k6i3t.WmqLVjK",
+      "name": "Lorena",
+      "id": 5
     }
   ],
   "entries": [
@@ -145,6 +151,18 @@
       "date": "2022-09-24T21:55:09.355Z",
       "userId": 1,
       "id": 24
+    },
+    {
+      "text": "I saw the mystical chicken creature!!!",
+      "date": "2022-09-26T22:10:57.547Z",
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "text": "Worked on school.",
+      "date": "2022-09-26T22:12:01.191Z",
+      "userId": 5,
+      "id": 26
     }
   ]
 }
